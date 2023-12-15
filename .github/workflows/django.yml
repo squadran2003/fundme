@@ -28,4 +28,5 @@ jobs:
         poetry install 
     - name: Run Tests
       run: |
+        working-directory: ./fundme
         python manage.py test
