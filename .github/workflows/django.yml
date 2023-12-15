@@ -26,7 +26,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install poetry
         poetry install
-        poetry shell
+    - name: Run Migrations
+      working-directory: ./fundme
+      run: poetry run python manage.py migrate
+    
     - name: Run Tests
       working-directory: ./fundme
-      run: python manage.py test
+      run: poetry run python manage.py test
