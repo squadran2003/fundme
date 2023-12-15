@@ -27,5 +27,5 @@ jobs:
         pip install poetry
         poetry install 
     - name: Run Tests
-        working-directory: ./fundme
-        run: python manage.py test
+      working-directory: ./fundme
+      run: python manage.py test
