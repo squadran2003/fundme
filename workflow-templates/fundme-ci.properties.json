@@ -1,8 +1,0 @@
-{
-    "name": "Andreas Fundme CI",
-    "description": "Andreas Fundme CI starter workflow.",
-    "iconName": "example-icon",
-    "categories": [
-        "Go"
-    ],
-}
