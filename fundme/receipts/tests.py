@@ -2,7 +2,7 @@ from django.test import TestCase
 from django.contrib.auth.models import User
 from .models import Receipt
 
-
+# test text
 class ReceiptTest(TestCase):
     def setUp(self):
         self.user = User.objects.create_user(username='testuser', password='12345')
