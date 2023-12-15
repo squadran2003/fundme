@@ -1,0 +1,11 @@
+{
+    "name": "Django CI Workflow",
+    "description": "Django CI starter workflow.",
+    "iconName": "example-icon",
+    "categories": [
+        "Go"
+    ],
+    "filePatterns": [
+        ".*\\.lock$"
+    ]
+}
