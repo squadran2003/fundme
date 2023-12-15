@@ -43,8 +43,8 @@ jobs:
       run: poetry install
     - name: Run Migrations
       working-directory: ./fundme
-      run: poetry run python manage.py migrate --settings=fundme.ci_cl_settings
+      run: poetry run python manage.py migrate 
     
     - name: Run Tests
       working-directory: ./fundme
-      run: poetry run python manage.py test --settings=fundme.ci_cl_settings
+      run: poetry run python manage.py test
