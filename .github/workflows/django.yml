@@ -40,13 +40,12 @@ jobs:
         echo "export PATH=\$HOME/.poetry/bin:\$PATH" >> $HOME/.bashrc
         source $HOME/.bashrc
     - name: Install Dependencies
-      run: |
-        poetry install
-        poetry shell
+      run: poetry install
+
     - name: Run Migrations
       working-directory: ./fundme
-      run: run python manage.py migrate 
+      run: poetry run python manage.py migrate 
     
     - name: Run Tests
       working-directory: ./fundme
-      run: run python manage.py test
+      run: poetry run python manage.py test
