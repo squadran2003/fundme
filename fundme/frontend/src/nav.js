@@ -1,35 +1,24 @@
 import React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+import Container from 'react-bootstrap/Container';
+import NavbarText from 'react-bootstrap/esm/NavbarText';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
-export default function Nav() {
+function defaultNav(){
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
-          </Typography>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 2 }}>
-            Fundme
-          </Typography>
-          <Button color="inherit">Login</Button>
-        </Toolbar>
-      </AppBar>
-    </Box>
+    <Navbar bg="primary" data-bs-theme="dark">
+        <Container fluid>
+          <Navbar.Brand href="#home">Fundme</Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+          </Nav>
+        </Container>
+        <NavbarText>
+          <Nav.Link href="#pricing">Login</Nav.Link>
+        </NavbarText>
+    </Navbar>
   );
 }
+
+export default defaultNav;
