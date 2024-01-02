@@ -8,12 +8,12 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 function defaultNav(){
   return (
     <Navbar bg="primary" data-bs-theme="dark" className='p-2'>
-          <Navbar.Brand href="#home">Fundme</Navbar.Brand>
+          <Navbar.Brand href="/">Fundme</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
           </Nav>
         <NavbarText>
-          <Nav.Link href="#pricing">Login</Nav.Link>
+          <Nav.Link href="/login">Login</Nav.Link>
         </NavbarText>
     </Navbar>
   );
