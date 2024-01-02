@@ -9,6 +9,12 @@ import Home from './pages/home.js';
 
 function App() {
   let loggedIn = false;
+  let url = "http://localhost:8000/api/token/";
+  let refreshUrl = "http://localhost:8000/api/token/refresh/";
+  // check if token exists
+  if(localStorage.getItem('token')){
+    loggedIn = true;
+  }
   return (
    <Container fluid>
       <Nav />
