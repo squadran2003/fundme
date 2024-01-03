@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import './App.css';
 import Nav from './nav.js';
 import Login from './pages/login.js';
+import Logout from './pages/logout.js';
 import Home from './pages/home.js';
 
 function App() {
@@ -14,13 +15,17 @@ function App() {
   // check if token exists
   if(localStorage.getItem('token')){
     loggedIn = true;
+  }else{
+    loggedIn = false;
   }
-  return (
+
+  return(
    <Container fluid>
-      <Nav />
+        <Nav loggedIn={loggedIn}/>
         <Routes>
             <Route path="/" element={loggedIn?<Home/>:<Navigate to="/login"/>}/>
             <Route path="/login" element={<Login />} />
+            <Route path="/logout" element={<Logout/>} />
         </Routes>
    </Container>
   );
