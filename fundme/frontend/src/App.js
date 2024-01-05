@@ -20,14 +20,16 @@ function App() {
   }
 
   return(
-   <Container fluid>
-        <Nav loggedIn={loggedIn}/>
-        <Routes>
-            <Route path="/" element={loggedIn?<Home/>:<Navigate to="/login"/>}/>
-            <Route path="/login" element={<Login />} />
-            <Route path="/logout" element={<Logout/>} />
-        </Routes>
-   </Container>
+    <div>
+       <Nav loggedIn={loggedIn}/>
+        <Container fluid>
+          <Routes>
+              <Route path="/" element={loggedIn?<Home/>:<Navigate to="/login"/>}/>
+              <Route path="/login" element={<Login />} />
+              <Route path="/logout" element={<Logout/>} />
+          </Routes>
+      </Container>
+    </div>
   );
 }
 
