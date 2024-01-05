@@ -96,13 +96,12 @@ WSGI_APPLICATION = 'fundme.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-print(env("DB_NAME"),env("DB_USER"),env("DB_PASSWORD"),env("DB_HOST"))
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': env("DB_NAME", "db_name"),
-        'USER': env("DB_USER", "db_user"),
-        'PASSWORD': env("DB_PASSWORD", "db_password"),
+        'NAME': env("DB_NAME"),
+        'USER': env("DB_USER"),
+        'PASSWORD': env("DB_PASSWORD"),
         'HOST': env("DB_HOST"),
         'PORT': '5432',
     }
