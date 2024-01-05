@@ -15,6 +15,8 @@ jobs:
       DB_USER: db_user
       DB_PASSWORD: db_password
       DB_HOST: localhost
+      SECRET_KEY: secret_key
+      DEBUG: True
     services:
       postgres:
         image: postgres:latest
