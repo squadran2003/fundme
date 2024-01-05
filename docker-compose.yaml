@@ -1,8 +1,10 @@
 version: '3.8'
 
 services:
-  fundme:
-    build: ./
+  api:
+    build:
+      context: ./
+      dockerfile: Dockerfile
     command: >
       sh -c "python manage.py migrate &&
              python manage.py runserver 0.0.0.0:8000"
@@ -14,11 +16,33 @@ services:
       - ./fundme/.env
     depends_on:
       - db
+    networks:
+      - db-net
+  web:
+    build:
+      context: ./fundme/frontend/
+      dockerfile: Dockerfile
+    command: npm start
+    volumes:
+      - ./frontend:/usr/src/fundme/fundme/frontend
+    ports:
+      - 3000:3000
+    stdin_open: true
+    depends_on:
+      - api
+    networks:
+      - db-net
   db:
     image: postgres:12.0-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
       - ./fundme/.env
+    networks:
+      - db-net
 volumes:
   postgres_data:
+
+networks:
+  db-net:
+    driver: bridge
