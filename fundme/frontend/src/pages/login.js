@@ -19,11 +19,6 @@ class Login extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-    // get the email and password from the form
-    // send a POST request to the backend
-    // receive a token
-    // store the token in localStorage
-    // redirect to home page
     handleSubmit(event) {
         event.preventDefault();
 

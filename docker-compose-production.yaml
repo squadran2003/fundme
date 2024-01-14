@@ -24,16 +24,19 @@ services:
     build:
       context: ./fundme/frontend/
       dockerfile: Dockerfile
-    command: npm start
-    volumes:
-      - ./fundme/frontend:/usr/src/fundme/fundme/frontend
-    ports:
-      - 3000:3000
-    stdin_open: true
     depends_on:
       - api
     networks:
       - db-net
+  webserver:
+    restart: always
+    build:
+      context: ./nginx/
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+    depends_on:
+      - web
   db:
     restart: always
     image: postgres:12.0-alpine
